@@ -63,21 +63,13 @@ B8-27-EB-9D-0F-53	192.168.1.112
 ## Thursday
 
 * Review
-* Configure `wpa_supplicant`
-* Folder navigation
-* `pwd`
-* `ls`
-* `cd`
-* `cp` - copy
-* `nano` - text editor
-* Configure `dhcpcd`
-* `sudo`
-* `reboot`
-
-* `figlet` & `toilet`
-* `apt`, `apt-get`
 * `<command> --help`, `command -h`
 * `man <command>`
+* Configure `wpa_supplicant`
+* Folder navigation
+* `pwd`, `ls`, `cd`, `cp`, `nano`, `sudo`
+* Configure `dhcpcd`
+* `reboot`, `apt`, `apt-get`, `figlet`, `toilet`, etc
 * piping
 
 ## Review
@@ -332,4 +324,4 @@ static ip_address=192.168.0.100/24
 4. Save - `control + x`, Y, enter
 5. `reboot` - `sudo reboot`
 
-Let me know when you've rebooted, and which IP address your Pi is @.
+Let me know when you've rebooted, and which IP address your Pi is @ on the NOSCRIPT network.
