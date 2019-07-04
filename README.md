@@ -1,1 +1,3 @@
-# NØ SCRIPT\n\n[Class Resources](NOSCRIPT.md)
+# NØ SCRIPT @ NØ SCHOOL NEVERS 2019
+
+[Class Resources](NOSCRIPT.md)
