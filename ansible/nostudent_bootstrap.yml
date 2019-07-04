@@ -1,0 +1,34 @@
+---
+- hosts: stragglers
+  become: yes
+  tasks:
+
+# Setup New User with Sudo and NOPASSWD 
+
+  - name: Add user 'nostudent'
+    user:
+      name: nostudent
+      password: $6$CLoUZ1b2wr3L/IZh$N/lFxH/PT2hDjkurCCsKFGf/U1A/emOzWwvifa228Jba3gcAhTOzIbiNN6WtQByboGqAEc3oZhKmFaOHYR8N21
+      shell: /bin/bash
+      create_home: yes
+      append: yes
+      state: present
+      groups: sudo
+
+  - name: Allow 'sudo' group to have passwordless sudo
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+
+  # - name: Reboot!
+  #   reboot:
+  #     msg: "Hold on to your butts!"
+
+
+
+
+
+

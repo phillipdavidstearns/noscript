@@ -1,0 +1,16 @@
+---
+- hosts: no_students
+  tasks:
+
+  - name: Test Internet Connection
+    shell: ping -c 2 1.1.1.1
+    register: result
+
+  - debug: msg="{{result.stdout}}"
+
+
+
+
+
+
+

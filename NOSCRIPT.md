@@ -318,7 +318,7 @@ For more on doing this in more secure ways [go here](https://www.raspberrypi.org
 
 ```
 interface wlan0
-static ip_address=192.168.0.100/24
+static ip_address=your.hotspot.subnet.100/24
 ```
 
 4. Save - `control + x`, Y, enter

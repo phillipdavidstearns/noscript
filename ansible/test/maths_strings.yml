@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+    - user_name: nostudent
+    - separator: "-"
+    - counter: 0
+    - string: ""
+
+  tasks:
+
+  - name: Increment variable
+    set_fact:
+      counter: "{{ counter | int + 1 }}"
+      string: "{{ user_name }}{{ separator }}{{ counter }}"
+    loop:
+     - 1
+     - 2
+     - 3
+     - 4 
+
+  - name:
+    debug: msg="{{ string }}"
