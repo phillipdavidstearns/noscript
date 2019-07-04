@@ -230,7 +230,7 @@ Lists the contents of a directory. Try running:
 nostudent@192.168.0.10X:~$ ls
 ```
 
-* `la -l` - outputs list in a single column 
+* `ls -l` - outputs list in a single column 
 * `ls -a` - lists everything (including hidden files)
 * `ls -h` - lists human readable file sizes
 
