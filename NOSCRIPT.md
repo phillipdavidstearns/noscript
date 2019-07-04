@@ -320,35 +320,16 @@ For more on doing this in more secure ways [go here](https://www.raspberrypi.org
 
 ## Configure `dhcpcd`
 
-
-
-* `sudo`
-* `reboot`
-
-* `figlet` & `toilet`
-* `apt`, `apt-get`
-* piping
-
----
-
-## Come back to this stuff:
-
-How to run a command: just type it in and press enter to execute!
+1. Locate the `dhcpcd.conf` file. It should be at `/etc/dhcpcd.conf`. Check out the `/etc` contents with `ls -alh`. 
+2. Make a backup by copying `/etc/dhcpcd.conf` to `/etc/dhcpcd.conf.bak`. A shortcut `sudo cp /etc/dhcpcd.conf{,.bak}`
+3. Edit the `dhcpcd.conf` file by adding the following text just below the section `# Example static IP configuration:`
 
 ```
-nostudent@192.168.0.10X:~$ something
+interface wlan0
+static ip_address=192.168.0.100/24
 ```
 
-Output:
+4. Save - `control + x`, Y, enter
+5. `reboot` - `sudo reboot`
 
-```
--bash: something: command not found
-```
-
-Ooops! The command doesn't exist... so how about
-
-```
-nostudent@192.168.0.10X:~$ command
-```
-
-This is actually more complicated command but illustrates what happens when a command executes successfully but doesn't provide any output.
+Let me know when you've rebooted, and which IP address your Pi is @.
