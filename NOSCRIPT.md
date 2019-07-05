@@ -222,7 +222,7 @@ The working directory is the point of reference for relative file paths.
 * `/home` - directory that contains directories of each user
 * `/home/nostudent` - contains user directories and files
 
-#### `ls` - list
+#### `ls` - list, `mkdir` - make directory, `rmdir` - remove directory
 
 Lists the contents of a directory. Try running:
 
@@ -230,7 +230,26 @@ Lists the contents of a directory. Try running:
 nostudent@192.168.0.10X:~$ ls
 ```
 
-* `ls -l` - outputs list in a single column 
+Nothing there... let's make some folders with `mkdir`.
+
+```
+$ mkdir Documents
+```
+You can make multiple directories too
+
+```
+$ mkdir Pictures Projects Movies Music
+```
+
+Also include spaces in the name (in two ways)
+
+```
+$ mkdir "2019 Documents"
+$ mkdir 2020\ Documents
+```
+Have a look at what we've done with:
+
+* `la -l` - outputs list in a single column 
 * `ls -a` - lists everything (including hidden files)
 * `ls -h` - lists human readable file sizes
 
@@ -239,6 +258,8 @@ Try:
 ```
 nostudent@192.168.0.10X:~$ ls -ahl
 ```
+
+
 
 We've been listing the contents of our working directory, but we can also list the contents of other directories on our Pi. Try:
 
