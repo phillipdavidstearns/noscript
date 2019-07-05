@@ -59,13 +59,31 @@ sudo apt install fortune figlet lolcat
 
 ### `echo`
 
-echo is a 
+`echo` prints text to the command line via the standard output (stdout). It can be used to send text to other commands using the pipe `|` command, or into a new file using the redirect `>` command, and append to the end of a line using `>>`. It can also be used to print the value of bash variables.
+
+Examples:
+
+```
+echo "Hello World"
+```
+
+Create a file with Hello World as its content
+
+```
+echo "Hello World" > hello_world.txt
+```
+
+Print the HOME bash variable
+
+```
+echo $HOME
+```
 
 ### `cowsay`
 
 `cowsay` displays ascii art characters saying something
 
-Type this command and press enter
+Type this command and press enter 
 
 ```
 cowsay hello no school 
