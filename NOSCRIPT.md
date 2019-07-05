@@ -396,15 +396,6 @@ This command will produce outputs of no more than 20 characters
 nostudent@192.168.1.100 $ fortune -n 20 -s
 ```
 
-### Echo
-
-The echo command ouputs text to the console
-
-Type this command and press enter
-
-```
-nostudent@192.168.1.100 $ echo hello no school 
-```
 
 ### Lolcat
 
@@ -417,7 +408,7 @@ nostudent@192.168.1.100 $ echo hello no school | lolcat
 ```
 
 This will output a colorful hello no school
-
+We'll give you more details about this syntax later.
 
 ### Figlet
 
@@ -432,13 +423,23 @@ nostudent@192.168.1.100 $ figlet hello no school
 This will output an ASCII hello no school banner
 
 
+### Echo
+
+The echo command ouputs text to the console
+
+Type this command and press enter
+
+```
+nostudent@192.168.1.100 $ echo hello no school 
+```
+
 ### Piping
 
 When command line tools produce an output (text displayed in the console), it can be redirected to another command to perform another operation.
 
 This is a powerful function allowing to chain commands to perform a complicated task with simple tools.
 
-We can combine the tools with the piping functionality
+We can combine the tools with the piping functionality, by adding the | character to send ouput of a previous command as an input for the other one.
 
 Type these commands and press enter
 
