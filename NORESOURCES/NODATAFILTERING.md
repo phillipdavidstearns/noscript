@@ -31,7 +31,7 @@ head filename.ext
 
 This will output the first 30 lines of the file
 ```
-head 30 filename.ext
+head -30 filename.ext
 ```
 
 ### TAIL
@@ -45,7 +45,7 @@ tail filename.ext
 
 This will display the last 20 lines of filename.ext
 ```
-tail 20 filename.txt
+tail -20 filename.txt
 ```
 
 When working with files being populated while you look at their content (ie: log files), you can use tail's -f option to watch the file as it is being updated
