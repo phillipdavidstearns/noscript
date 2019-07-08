@@ -112,37 +112,41 @@ grep -A 2 "search term" filename.ext
 ### SED
 
 In the context of data extraction or filtering, sed is another powerfull tool with a lot of options.
+You can use the Airmon-ng_sample.csv file for testing
+
 
 This command will output the first line of a file.
 The -n options tells sed to not output anything and then 1 is the matching pattern followed by an instruction (p being for print).
 ```
-sed -n '1 p' file.ext
+sed -n '1 p' filename.ext
 ```
 
 This command will output lines 10 to 15 of the file.
 ```
-sed -n '10,15 p' file.ext
+sed -n '10,15 p' filename.ext
 ```
 
 You can also use search terms to match certain lines
 This command will only output lines containing "iPhone" 
 ```
- sed -n '/iPhone/ p' file.ext
+ sed -n '/iPhone/ p' filename.ext
 ```
 
 To perform a case insensitive search, use the I option after the matching criteria
 This command will only output lines containing "iPhone, iphone, IPhone, IPHONE, etc ..." 
 ```
- sed -n '/iphone/I p' file.ext
+ sed -n '/iphone/I p' filename.ext
 ```
 
-To match lines starting with a with a certain word, use the ^ option
+To match lines starting with a with a certain word, use the ^ option.
+This command will only display lines starting with DC.
 ```
- sed -n '/^DC/ p' file.ext
+ sed -n '/^DC/ p' filename.ext
 ```
 
-To filter out lines, use the d action
+To filter out lines, use the d action.
+This command will remove lines containing the word secure from the output.
 ```
- sed '/secure/ d' file.ext
+ sed '/secure/ d' filename.ext
 ```
 
