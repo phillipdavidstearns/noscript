@@ -13,6 +13,7 @@ git clone https://github.com/phillipdavidstearns/noscript.git
 * [NØ CONFIGURATION](NORESOURCES/NOCONFIGURATION.md) - Configuring Raspberry Pis to connect to a personal Wifi Hotspot
 * [NØ PIPING](NORESOURCES/NOPIPING.md) - Piping and Redirection using fun hackery tools
 * [NØ DATA FILTERING](NORESOURCES/NODATAFILTERING.md) - Data pre-visualisation and filtering
+* [NØ DATA CONVERSION](NORESOURCES/NODATACONVERSION.md) - Transforming information on the command line
 * [NØ HOSTING](NORESOURCES/NOHOSTING.md) - Host an HTTP Server (webpage) on your Pi
 * [NØ ACCESS](NORESOURCES/NOACCESS.md) - Setting up the Raspberry Pi to act as a WiFi access point and serve up a captive portal.
 
