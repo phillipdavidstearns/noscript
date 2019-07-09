@@ -1,6 +1,12 @@
 # NØ ACCESS
 
-Configuring your Raspberry Pi to act as a wireless access point and serve up a captive portal.
+Configuring your Raspberry Pi to act as a wireless access point and serve up a captive portal. The Raspberry Pi can host a fully website complete with javascript, php, and any content that can be stored on the available space of the micro SD card.
+
+Hosting everything locally means that we will be able to access the content from the WiFi access point we create, even though the Pi itself may not be connected to the internet.
+
+You should think of this as a WiFi accessible, offline website.
+
+This creates the possibility for local WiFi publishing, WiFi dead drops, mobile net art galleries, etc...
 
 ## Agenda
 
@@ -63,13 +69,13 @@ Depending on the boot sequence, the dongle and onboard wireless adapters might s
 4. select "Yes" and press enter
 5. Reboot
 
-Now when you log back in and run `$ ip a`, we should see `wlan0`, and an interface with a unique id. My wifi dongle's name is now `wlx9cefd5fc3019`. Check your MAC address to confirm. The unique ID is based on the device's MAC.
+Now when you log back in and run `$ ip a`, we should see `wlan0`, and an interface with a unique id. My wifi dongle's name is now `wlx9cefd5fc3019`. The unique ID is based on the device's MAC. Check your MAC address to confirm.
 
-Make sure to write this down for the next steps.
+*Make sure to write this down for the next steps!*
 
 ### 4. Create a hostname for hotspot network
 
-When a host connects to our access point, it's nice if the IP address resolves to a host name. To configure this we need to edit the `/etc/hosts` file:
+When a host connects to our access point, it's nice if its IP address resolves to a host name. To configure this we need to edit the `/etc/hosts` file:
 
 ```
 $ sudo nano /etc/hosts
@@ -81,7 +87,7 @@ and add the following line
 192.168.42.1	localnet
 ```
 
-The name can be anything we want and you can change this in the future.
+The name can be anything we want and you can change this in the future. For now, we simply want a user-friendly name, `localnet` to take the place of something like `192.168.42.1`.
 
 ## Configure Tools:
 
@@ -118,7 +124,7 @@ Checking the status again should give us:
 
 This is what we want.
 
-If `status` is "active", run:
+If `status` displays "Active: active", run:
 
 ```
 $ sudo systemctl stop hostapd
@@ -130,11 +136,16 @@ Then run:
 $ sudo systemctl stop dnsmasq
 ```
 
-Both `hostapd` and `dnsmasq` should be stopped. You can check their 
+Both `hostapd` and `dnsmasq` should be stopped. Check their status to confirm (optional but recommended).
+
+```
+$ sudo systemctl status hostapd
+$ sudo systemctl status dnsmasq
+```
 
 ### 2. Modify DHCP settings
 
-Setup a static IP for the access point we'll run on our USB wifi dongle.
+Setup a static IP for the access point we'll run on our USB wifi dongle. This address will serve as the router IP for the access point. When you connect to the it, you'll also be able to `ssh` into this address.
 
 ```
 $ sudo nano /etc/dhcpcd.conf
@@ -147,6 +158,7 @@ interface <your_assigned_network_device_name>
 	static ip_address=192.168.42.1/24
 	nohook wpa_supplicant
 ```
+Be sure to replace `<your_assigned_network_device_name>` with your adapter's predictable name.
 
 Save and exit.
 
@@ -171,7 +183,7 @@ Add to it:
 ```
 
 # Network Name
-ssid="NØ PORTAL"
+ssid=<choose_your_own_ssid>
 
 # Network Region
 country_code=FR
@@ -279,13 +291,13 @@ Be sure to change `<your_assigned_network_device_name>` to the predictable netwo
 
 #### `hostapd`
 
-There's a good chance `hostapd`, may be masked, requiring us to explicitly start it up as follows:
+We're ready to launch our access point!
 
 ```
 $ sudo systemctl start hostapd
 ```
 
-This might fail, but it could be because of other system services running. We'll reboot after starting dnsmasq, then check the service status.
+This might fail, but it could be because of other system services running. We'll reboot after starting dnsmasq, then check the service status again.
 
 #### `dnsmasq`
 
@@ -325,10 +337,10 @@ $ sudo chown nostudent:www-data -R /usr/share/nginx/html
 ```
 -->
 
-Make a backup of the default `nginx` `index.html` page:
+Make a backup of the default `nginx` `index.html` page. You can replace this page with custom html and javascript later. This is just a place holder to indicate that the setup worked.
 
 ```
-sudo cp /usr/share/nginx/html/index.html{,.bak}
+$ sudo cp /usr/share/nginx/html/index.html{,.bak}
 ```
 
 Create the portal page (draft) in a fresh `index.html` page:
@@ -355,14 +367,11 @@ server {
 	# Listen for requests over both HTTP and HTTPS
 	listen 80;
 	listen [::]:80;
-	#listen 443 ssl;
-	#listen [::]:443;
+	
 	# Present a friendly name to the client, instead of an IP address
 	server_name localnet;
-	#Include HTTPS configuration from the snippets directory
-	#include snippets/self-signed.conf;
-	#include snippets/ssl-params.conf;
-	
+
+	# Tell nginx where the root directory of the website is located
 	root /usr/share/nginx/html;
 
 	index index.html index.htm index.nginx-debian.html;
@@ -379,7 +388,9 @@ server {
 }
 ```
 
-Create a symbolic link to the conf file:
+Press controll+x, y, enter to save.
+
+Create a symbolic link to the configuration file:
 
 ```
 $ sudo ln -s /etc/nginx/sites-available/captive-portal.conf /etc/nginx/sites-enabled/captive-portal.conf
