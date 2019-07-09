@@ -311,6 +311,7 @@ Jul 09 16:28:19 raspberrypi systemd[1]: Started dnsmasq - A lightweight DHCP and
 
 ### 7. Create a basic portal page
 
+<!--
 Create a directory to put the portal page files in:
 
 ```
@@ -322,14 +323,22 @@ Change the owner to `nostudent:www-data` to allow for sudo-less editing
 ```
 $ sudo chown nostudent:www-data -R /usr/share/nginx/html
 ```
+-->
 
-Create the portal page (draft)
+Make a backup of the default `nginx` `index.html` page:
 
 ```
-$ echo "<h1>Hello</h1>" > /usr/share/nginx/html/captive-portal/captive-portal.html
+sudo cp /usr/share/nginx/html/index.html{,.bak}
 ```
 
+Create the portal page (draft) in a fresh `index.html` page:
+
+```
+$ echo "<h1>Hello</h1>" > /usr/share/nginx/html/index.html
+```
+<!--
 Connect to your access point and navigate to `test.com`. You should be redirected to the default `nginx` page.
+-->
 
 ### 8. Configure `nginx`
 
