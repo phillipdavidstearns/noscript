@@ -195,13 +195,13 @@ hw_mode=g
 channel=6
 ieee80211n=1
 wmm_enabled=0
-macaddr_acl=0 
+macaddr_acl=0
 ignore_broadcast_ssid=0
 
 #If you want to set a password for network access
 #auth_algs=1
 #wpa=2
-#wpa_key_mgmt=WPA-PSK 
+#wpa_key_mgmt=WPA-PSK
 #wpa_pairwise=TKIP
 #rsn_pairwise=CCMP
 #wpa_passphrase=NOSECRET2019
