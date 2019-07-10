@@ -54,8 +54,10 @@ For more on doing this in more secure ways [go here](https://www.raspberrypi.org
 
 ```
 interface wlan0
-static ip_address=your.hotspot.subnet.100/24
+static ip_address=your.access_point.subnet.100/24
 ```
+
+You might need to connect to your access point with a different device and find the subnet, typically the first three octets of the IP address. Typically this is `192.168.0.1` where the subnet is `192.168.0`.
 
 Note: If you're using a USB WiFi dongle, enable "predictable network names' using `sudo raspi-config` and reboot. The USB dongle will then be assigned a unique name based on it's MAC address. For instance, if the MAC address is `AB:CD:EF:01:23:45` then your predictable device name will be `wlxabcdef012345`. The built in wireless device will then be named `wlan0`.
 
