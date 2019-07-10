@@ -1,5 +1,7 @@
 # NØ ACCESS
 
+![](../images/screen_004.png)
+
 Configuring your Raspberry Pi to act as a wireless access point and serve up a captive portal. The Raspberry Pi can host a fully website complete with javascript, php, and any content that can be stored on the available space of the micro SD card.
 
 Hosting everything locally means that we will be able to access the content from the WiFi access point we create, even though the Pi itself may not be connected to the internet.
@@ -410,4 +412,8 @@ $ sudo reboot
 
 ### 9. Connect
 
-Connect to your open access point and see if your captive portal page pops up automatically.
+Connect to your open access point and see if your captive portal page pops up automatically. You can edit the index.html and upload content to host locally in the `/usr/share/nginx/html/` directory.
+
+### SUCCESS!
+
+![](../images/screen_002.png)

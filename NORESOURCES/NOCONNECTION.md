@@ -1,5 +1,7 @@
 # NØ SETUP
 
+![](../images/network_001.jpg)
+
 For NØ SCRIPT, we've setup a network so that we can remotely manage 12 Raspberry Pis. The idea is to go cold turkey in regards to moving away from the Graphic User Interface.
 
 Using networked Raspberry Pis seemed like a reasonable approach to introducing students to computer networking principles. This page explains how the network is setup along with some basic concepts for understanding how it's working.
@@ -29,6 +31,8 @@ An IP address is assigned to your computer by the router when you connect to it 
 The Address Resolution Protocol describes the discovery of MAC and IP address associations.
 
 ### NØSCRIPT WiFi
+
+![](../images/network_003.jpg)
 
 This is our network of Pis. Connect to NØSCRIPT in order to access your Pi wirelessly.
 

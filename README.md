@@ -1,5 +1,9 @@
 # NØ SCRIPT @ [NØ SCHOOL NEVERS 2019](https://noschoolnevers.com)
 
+<center>
+![](images/screen_003.gif)
+</center>
+
 A collection of modules and walkthroughs for helping you get the most (fun) out of your Raspberry Pi.
 
 Grab the goods:
