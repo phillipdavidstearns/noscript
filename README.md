@@ -10,7 +10,8 @@ git clone https://github.com/phillipdavidstearns/noscript.git
 ## [NØ RESOURCES](NORESOURCES/)
 
 * [NØ CONNECTION](NORESOURCES/NOCONNECTION.md) - Connecting to our Pis over Secure Shell (ssh)
-* [NØ CONFIGURATION](NORESOURCES/NOCONFIGURATION.md) - Configuring Raspberry Pis to connect to a personal Wifi Hotspot
+* [NØ CONFIGURATION](NORESOURCES/NOCONFIGURATION.md) - Learning bash by Configuring Raspberry Pis to connect to a personal Wifi Hotspot
+	* [NØ CONFIGURATION (REDUX)](NORESOURCES/NOCONFIGURATION_REDUX.md) - Configuring Raspberry Pis to automatically connect to a WiFi access point
 * [NØ PIPING](NORESOURCES/NOPIPING.md) - Piping and Redirection using fun hackery tools
 * [NØ DATA FILTERING](NORESOURCES/NODATAFILTERING.md) - Data pre-visualisation and filtering
 * [NØ DATA CONVERSION](NORESOURCES/NODATACONVERSION.md) - Transforming information on the command line
