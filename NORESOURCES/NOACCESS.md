@@ -1,8 +1,9 @@
 # NØ ACCESS
 
+
 ![](../images/screen_004.png)
 
-Configuring your Raspberry Pi to act as a wireless access point and serve up a captive portal. The Raspberry Pi can host a fully website complete with javascript, php, and any content that can be stored on the available space of the micro SD card.
+Configure your Raspberry Pi to act as a wireless access point and serve up a captive portal. The Raspberry Pi can host a fully website complete with javascript, php, and any content that can be stored on the available space of the micro SD card.
 
 Hosting everything locally means that we will be able to access the content from the WiFi access point we create, even though the Pi itself may not be connected to the internet.
 
@@ -191,19 +192,19 @@ ssid=<choose_your_own_ssid>
 country_code=FR
 
 # Network Device Settings
-interface=<your_assigned_network_device_name>                                  
+interface=<your_assigned_network_device_name>
 driver=nl80211
 hw_mode=g
 channel=6
 ieee80211n=1
 wmm_enabled=0
-macaddr_acl=0 
+macaddr_acl=0
 ignore_broadcast_ssid=0
 
 #If you want to set a password for network access
 #auth_algs=1
 #wpa=2
-#wpa_key_mgmt=WPA-PSK 
+#wpa_key_mgmt=WPA-PSK
 #wpa_pairwise=TKIP
 #rsn_pairwise=CCMP
 #wpa_passphrase=NOSECRET2019
@@ -348,7 +349,7 @@ $ sudo cp /usr/share/nginx/html/index.html{,.bak}
 Create the portal page (draft) in a fresh `index.html` page:
 
 ```
-$ echo "<h1>Hello</h1>" > /usr/share/nginx/html/index.html
+$ sudo echo "<h1>Hello</h1>" > /usr/share/nginx/html/index.html
 ```
 <!--
 Connect to your access point and navigate to `test.com`. You should be redirected to the default `nginx` page.

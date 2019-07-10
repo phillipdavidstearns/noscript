@@ -260,7 +260,7 @@ cp wpa_suplicant.conf wpa_suplicant.conf.bak
 
 Permission denied? Only the root user can write to this directory!
 
-#### `sudo - superuser do
+#### `sudo` - superuser do
 
 Use `sudo` to temporarily escalate your privileges to root or superuser.
 
