@@ -20,7 +20,7 @@ git clone https://github.com/phillipdavidstearns/noscript.git
 * [NØ HOSTING](NORESOURCES/NOHOSTING.md) - Host an HTTP Server (webpage) on your Pi
 * [NØ ACCESS](NORESOURCES/NOACCESS.md) - Setting up the Raspberry Pi to act as a WiFi access point and serve up a captive portal.
 
-A class by [Jerome Saint-Claire](https://www.saint-clair.net/) and [Phillip David Stearns](https://phillipstearns.com)
+A class by [Jerome Saint-Clair](https://www.saint-clair.net/) and [Phillip David Stearns](https://phillipstearns.com)
 
 
 ## NØ USE
